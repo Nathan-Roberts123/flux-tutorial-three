@@ -6,4 +6,4 @@ metadata:
 spec:
   interval: 1m
   type: oci
-  url: oci://ghcr.io/nginx/charts/nginx-ingress-lts
+  url: oci://ghcr.io/nginxinc/charts/nginx-ingress

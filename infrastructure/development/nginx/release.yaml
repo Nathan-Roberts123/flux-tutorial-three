@@ -7,8 +7,8 @@ spec:
   interval: 10m
   chart:
     spec:
-      chart: nginx-ingress-lts
-      version: '2026.0.x'
+      chart: nginx-ingress
+      version: '1.0.x'
       sourceRef:
         kind: HelmRepository
         name: nginx
