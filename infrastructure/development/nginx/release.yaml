@@ -2,20 +2,17 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: nginx
-  namespace: default
+  namespace: nginx
 spec:
   interval: 10m
-  targetNamespace: nginx  # 3. Explicitly forces Helm installation target
-  install:
-    createNamespace: true
   chart:
     spec:
-      chart: <name|path>
-      version: '4.0.x'
+      chart: nginx-ingress-lts
+      version: '2026.0.x'
       sourceRef:
-        kind: <HelmRepository|GitRepository|Bucket>
-        name: podinfo
-        namespace: flux-system
+        kind: HelmRepository
+        name: nginx
+        namespace: nginx
       interval: 10m
   values:
     replicaCount: 2
