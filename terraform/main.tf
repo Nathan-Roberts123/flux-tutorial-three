@@ -129,6 +129,6 @@ module "flux_operator_bootstrap" {
   revision = 1
 
   gitops_resources = {
-    instance_yaml = file("${path.root}/clusters/development/flux-system/flux-instance.yaml")
+    instance_yaml = file("${path.root}/../clusters/development/flux-system/flux-instance.yaml")
   }
 }
