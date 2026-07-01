@@ -8,3 +8,9 @@
 
 # Crash logs
 crash.log
+
+# Ignore all variable files (which often contain secrets)
+*.tfvars
+*.tfvars.json
+
+*.auto.tfvars
