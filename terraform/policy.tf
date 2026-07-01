@@ -21,11 +21,6 @@ resource "aws_iam_role_policy" "external_secrets_ssm_policy" {
   })
 }
 
-# resource "aws_iam_role_policy_attachment" "external_secrets_role_policy_association" {
-#   role       = aws_iam_role.external_secrets_role.name
-#   policy_arn = aws_iam_policy.external_secrets_ssm_policy.arn
-# }
-
 resource "aws_iam_role_policy_attachment" "amazoneks_ebs_csi_driver_role_policy_association" {
   role       = aws_iam_role.amazoneks_ebs_csi_driver_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEBSCSIDriverPolicyV2"
