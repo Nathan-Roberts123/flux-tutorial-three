@@ -14,3 +14,9 @@ variable "repository_name" {
   type        = string
   default     = "flux-tutorial-three"
 }
+
+variable "repository_branch" {
+  description = "Name of the GitHub repository branch for Flux"
+  type        = string
+  default     = "master"
+}

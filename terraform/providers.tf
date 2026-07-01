@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 provider "kubernetes" {
-  host                   = data.aws_eks_cluster.this.endpoint
+  host = data.aws_eks_cluster.this.endpoint
   cluster_ca_certificate = base64decode(
     data.aws_eks_cluster.this.certificate_authority[0].data
   )
@@ -12,7 +12,7 @@ provider "kubernetes" {
 
 provider "flux" {
   kubernetes = {
-    host                   = data.aws_eks_cluster.this.endpoint
+    host = data.aws_eks_cluster.this.endpoint
     cluster_ca_certificate = base64decode(
       data.aws_eks_cluster.this.certificate_authority[0].data
     )
@@ -20,10 +20,11 @@ provider "flux" {
   }
 
   git = {
+    branch = var.repository_branch
     url = "https://github.com/${var.github_owner}/${var.repository_name}.git"
     http = {
-      username = "git" # This can be any string when using a personal access token
-      password = data.aws_secretsmanager_secret_version.github_token_version.secret_string
+      username = var.github_owner # This can be any string when using a personal access token
+      password = local.github_pat
     }
   }
 }
