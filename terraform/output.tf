@@ -12,4 +12,8 @@ output "flux_namespace" {
 output "eks_cluster_name" {
   description = "Name of an EKS Cluster that was created"
   value       = module.eks_al2023.cluster_name
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 149581369c198febfeea1bc3afe587f0b7b25c5b
