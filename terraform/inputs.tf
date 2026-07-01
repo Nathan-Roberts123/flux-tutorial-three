@@ -26,3 +26,8 @@ variable "wallbag_credentials_region" {
   type        = string
   default     = "us-east-1"
 }
+
+variable "github_pat" {
+  description = "PAT with permission for flux to bootstrap"
+  type        = string
+}

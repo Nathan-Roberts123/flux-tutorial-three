@@ -24,7 +24,7 @@ provider "flux" {
     url = "https://github.com/${var.github_owner}/${var.repository_name}.git"
     http = {
       username = var.github_owner # This can be any string when using a personal access token
-      password = local.github_pat
+      password = var.github_pat
     }
   }
 }

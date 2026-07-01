@@ -1,9 +1,4 @@
 locals {
-  #GITHUB
-  github_pat = jsondecode(
-    data.aws_secretsmanager_secret_version.github_token_version.secret_string
-  )["my-github-pat"]
-
   #IAM_ROLES
   oidc_issuer_url = data.aws_eks_cluster.this.identity[0].oidc[0].issuer
 

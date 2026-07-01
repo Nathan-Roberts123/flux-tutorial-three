@@ -14,14 +14,6 @@ data "aws_eks_cluster_auth" "this" {
   ]
 }
 
-data "aws_secretsmanager_secret" "github_token" {
-  name = "my-github-pat"
-}
-
-data "aws_secretsmanager_secret_version" "github_token_version" {
-  secret_id = data.aws_secretsmanager_secret.github_token.id
-}
-
 data "aws_availability_zones" "available" {
   # Exclude local zones
   filter {
