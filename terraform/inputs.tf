@@ -20,3 +20,9 @@ variable "repository_branch" {
   type        = string
   default     = "master"
 }
+
+variable "wallbag_credentials_region" {
+  description = "The aws region of parater store wallabag database paraters"
+  type        = string
+  default     = "us-east-1"
+}
