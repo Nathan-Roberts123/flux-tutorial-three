@@ -35,7 +35,7 @@ resource "aws_iam_role_policy" "aws_load_balancer_controller_iam_policy" {
   name = "AWSLoadBalancerControllerIAMPolicy"
   role = aws_iam_role.aws-load-balancer-controller_role.id
 
-  policy = templatefile(
+  policy = file(
   "${path.module}/policies/aws-load-balancer-controller-iam-policy.json.tpl",
   )
 
